@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+ 
+    <!-- loading page -->
+    <div class="loading" id="loading">
+        <div class="loaders">
+            <img src="images/load.png" alt="" class="loaders-image loaders-1">
+        </div>
+        <div class="loaders">
+            <img src="images/load.png" alt="" class="loaders-image loaders-2">
+        </div>
+        <div class="loaders">
+            <img src="images/load.png" alt="" class="loaders-image loaders-3">
+        </div>
+        <div class="loaders">
+            <img src="images/load.png" alt="" class="loaders-image loaders-4">
+        </div>
+    </div>
+
+
+    <div class="landing-page">
+        <div class="navigation-bar" id="navigation-bar">
+
+        </div>
+        <div class="carousel-controller">
+            <div class="controller-nav">
+                <div class="carousel-controller-left is-hidden " id="carousel-controller-left"></div>
+                <div class="carousel-controller-right" id="carousel-controller-right"></div>
+            </div>
+        </div>
+        <div class="carousel" id="carousel">
+            <div class="slide current_slide" id="slide1"></div>
+            <div class="slide" id="slide2"></div>
+            <div class="slide" id="slide3"></div>
+            <div class="slide" id="slide4"></div>
+            <div class="slide" id="slide5"></div>
+            <div class="slide" id="slide6"></div>
+
+        </div>
+        <div class="indicators-navigation">
+            <span class="indicators current_slide" id="indicator-1"></span>
+            <span class="indicators" id="indicator-2"></span>
+            <span class="indicators" id="indicator-3"></span>
+            <span class="indicators" id="indicator-4"></span>
+            <span class="indicators" id="indicator-5"></span>
+            <span class="indicators" id="indicator-6"></span>
+        </div>
+
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
