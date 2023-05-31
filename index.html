@@ -10,7 +10,7 @@
 </head>
 
 <body>
- 
+
     <!-- loading page -->
     <div class="loading" id="loading">
         <div class="loaders">
@@ -27,15 +27,38 @@
         </div>
     </div>
 
-
+    <!-- Landing page -->
     <div class="landing-page">
+        <!-- Navigation bar -->
+        <div class="cursor" id="cursor">
+         
+            <!-- cursor --> 
+        </div>
         <div class="navigation-bar" id="navigation-bar">
+            <div class="logo flex" id="logo">
+                <img src="images/logo.png" alt="" class="logo-image">
+            </div>
+            <div class="tags flex" id="tags">
+                <ul class="tags-list" id="tags-list">
+                    <li class="tags-items"><a href="" class="links hover flex-c link-1">Home</a><span class="span-links">Home</span></li>          
+                    <li class="tags-items"><a href="" class="links hover flex-c">Menu</a><span class="span-links">Menu</span></li>
+                    <li class="tags-items"><a href="" class="links hover flex-c">Contact Us</a><span class="span-links">Contact Us</span></li>
+                    <li class="tags-items"><a href="" class="links hover flex-c">Email Us</a><span class="span-links">Email Us</span></li>
+                    <li class="tags-items"><a href="" class="links hover flex-c">Location</a><span class="span-links">Location</span></li>
+                </ul>
+            </div>
+            <div class="others-nav-links flex">
+                <ion-icon name="logo-instagram" class="hover"></ion-icon>
+                <ion-icon name="logo-facebook" class="hover"></ion-icon>
+                <ion-icon name="ice-cream-outline" class="hover"></ion-icon>
+                <ion-icon name="menu-outline" class="hover"></ion-icon>
+            </div>
 
         </div>
         <div class="carousel-controller">
             <div class="controller-nav">
-                <div class="carousel-controller-left is-hidden " id="carousel-controller-left"></div>
-                <div class="carousel-controller-right" id="carousel-controller-right"></div>
+                <div class="carousel-controller-left is-hidden hover " id="carousel-controller-left"></div>
+                <div class="carousel-controller-right hover" id="carousel-controller-right"></div>
             </div>
         </div>
         <div class="carousel" id="carousel">
@@ -57,6 +80,11 @@
         </div>
 
     </div>
+
+    <div class="items-carousel">
+        
+    </div>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
     <script src="index.js"></script>
 </body>
 
