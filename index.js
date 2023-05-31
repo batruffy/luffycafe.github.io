@@ -1,42 +1,35 @@
 
-// We will change background image by trageting carousel div using getElementById property. Background image will change every 15s. we will just translate element to -100vw every fifteen seconds and at the end we will just translate element to it's orignal position. and this procces will countiue infinte times. 
-
-
+//Targeting All Elements Here
 
 const carousel = document.getElementById("carousel");
 const slides = Array.from(carousel.children);
-
 const prevButton = document.querySelector('.carousel-controller-left');
 const nextButton = document.querySelector('.carousel-controller-right');
-
 const indicatorsNav = document.querySelector('.indicators-navigation');
 const indicatorsDots = Array.from(indicatorsNav.children);
-
-
 const slideSize = slides[0].getBoundingClientRect();
 const slideWidth = slideSize.width;
 
-
-const removeLoading = () => {
-}
-
+//All Function listed here..
 const setSlidePosition = (slide, index) => {
     slide.style.left = slideWidth * index + 'px';
 }
 
-
+//Fuunction to move Slides...
 const moveToSlide = (carousel, currentSlide, targetSlide) => {
     carousel.style.transform = `translateX(-${targetSlide.style.left})`;
     currentSlide.classList.remove('current_slide');
     targetSlide.classList.add('current_slide');
-    
+
 }
 
+//Function to upadte indicators.....
 const upadteDot = (currentDot, targetDot) => {
     currentDot.classList.remove('current_slide')
     targetDot.classList.add('current_slide')
 }
 
+//Function to upadte controller.....
 const addControllerArrow = (targetDotIndex, nextButton, prevButton, slides) => {
     if (targetDotIndex === 0) {
         prevButton.classList.add('is-hidden');
@@ -50,13 +43,20 @@ const addControllerArrow = (targetDotIndex, nextButton, prevButton, slides) => {
     }
 }
 
-window.addEventListener('load', ()=>{
+
+//Adding Loading page while loading........
+window.addEventListener('load', () => {
     const preLoader = document.getElementById("loading");
     console.log("load")
-    preLoader.style.display = 'none';  
+    preLoader.style.display = 'none';
 })
+
+
+//Setting postion of all slides...
 slides.forEach(setSlidePosition);
 
+
+//Adding events on next button....
 nextButton.addEventListener('click', () => {
     const currentSlide = carousel.querySelector('.current_slide');
     const nextSlide = currentSlide.nextElementSibling;
@@ -70,6 +70,8 @@ nextButton.addEventListener('click', () => {
 
 });
 
+
+//Adding events on prev button....
 prevButton.addEventListener('click', () => {
     const currentSlide = carousel.querySelector('.current_slide');
     const prevSlide = currentSlide.previousElementSibling;
@@ -82,7 +84,7 @@ prevButton.addEventListener('click', () => {
     addControllerArrow(prevIndex, nextButton, prevButton, slides);
 });
 
-
+//Adding events on indicators....
 indicatorsNav.addEventListener('click', e => {
     const targetDot = e.target.closest('span');
 
@@ -102,112 +104,55 @@ indicatorsNav.addEventListener('click', e => {
 
 
 
+//Adding Custom Cursor Function.....
+
+const cursor = document.querySelector('.cursor');
+const cursorDets = cursor.getBoundingClientRect();
+const cursorWidth = cursorDets.width;
+const cursorHeight = cursorDets.height;
+console.log(cursorWidth);
+console.log(cursorHeight);
+
+
+const landing = document.querySelector('.landing');
+const tags = document.querySelector('.tags');
+console.log(tags)
+const tag = document.querySelector('.tags-list');
+const nav = document.querySelector('.navigation-bar');
+const tagItems = document.querySelectorAll('.tags-items');
+const hover = document.querySelectorAll('.hover');
+const spanLinks = document.querySelectorAll('.span-links');
+const icons = document.querySelector('.others-nav-links');
+console.log(nav);
+
+window.addEventListener('mousemove', (dets) => {
+    
+    cursor.style.transform = `translate(${dets.clientX - cursorWidth/2}px, ${dets.clientY - cursorHeight/2}px)`;
+});
+
+
+//Function to Add the cursor events on any element.....
+
+
+const cursorEvent = (scale) => {
+    cursor.style.width = `${cursorWidth * scale}px`;
+    cursor.style.height = `${cursorHeight * scale}px`;
+    
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const number = 0;
-
-// setInterval(() => {
-//     carousel.style.transform = `translateX(-${number}vw)`;
-//     if (number == 700) {
-//         number = 0;
-//     } else {
-//         number += 100;
-//     }
-// }, 10000)
-
-
-
-// let carouselLeft = document.getElementById("carousel-controller-left");
-
-// carouselLeft.addEventListener("click", () => {
-//     if (number <= 0) {
-//         number == 0;
-//         carousel.style.transform = `translateX(-${number}vw)`;
-//     } else {
-//         number -= 100;
-//         carousel.style.transform = `translateX(-${number}vw)`;
-//     }
-// })
-
-
-// let carouselRight = document.getElementById("carousel-controller-right");
-
-// carouselRight.addEventListener("click", () => {
-//     if (number >= 700) {
-//         number == 700;
-//         carousel.style.transform = `translateX(-${number}vw)`;
-//     } else {
-//         number += 100;
-//         carousel.style.transform = `translateX(-${number}vw)`;
-//     }
-// })
-
-
-// const item1 = document.getElementById("item-1");
-// const item2 = document.getElementById("item-2");
-// const item3 = document.getElementById("item-3");
-// const item4 = document.getElementById("item-4");
-// const item5 = document.getElementById("item-5");
-// const item6 = document.getElementById("item-6");
-// const item7 = document.getElementById("item-7");
-// const item8 = document.getElementById("item-8");
-
-// item1.addEventListener('click', () => {
-//     number = 0;
-//     carousel.style.transform = `translateX(-${number}vw)`;
-// });
-// item2.addEventListener('click', () => {
-//     number = 100;
-//     carousel.style.transform = `translateX(-${number}vw)`;
-// });
-// item3.addEventListener('click', () => {
-//     number = 200;
-//     carousel.style.transform = `translateX(-${number}vw)`;
-// });
-// item4.addEventListener('click', () => {
-//     number = 300;
-//     carousel.style.transform = `translateX(-${number}vw)`;
-// });
-// item5.addEventListener('click', () => {
-//     number = 400;
-//     carousel.style.transform = `translateX(-${number}vw)`;
-// });
-// item6.addEventListener('click', () => {
-//     number = 500;
-//     carousel.style.transform = `translateX(-${number}vw)`;
-// });
-// item7.addEventListener('click', () => {
-//     number = 600;
-//     carousel.style.transform = `translateX(-${number}vw)`;
-// });
-// item8.addEventListener('click', () => {
-//     number = 700;
-//     carousel.style.transform = `translateX(-${number}vw)`;
-// });
-
-
-// const UpdateSlide = () =>{
-//     carousel.style.transform = `translateX(-${number}*100vw)`;
-//     number += 100;
-// }
+hover.forEach(element => {
+    element.addEventListener('mousemove',()=>{
+        cursorEvent(2);
+        element.style.color ="white";
+        // element.style.transform =`translateY(-100%)`;
+        cursor.style.mixBlendMode = `difference`;
+    })
+    element.addEventListener('mouseleave',()=>{
+        cursorEvent(1);
+        element.style.color = "black";
+        // element.style.transform =`translateY(0)`;
+        cursor.style.mixBlendMode = `normal`;
+    })
+})
